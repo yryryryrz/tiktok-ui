@@ -1,9 +1,11 @@
+
 .wrapper {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     font-size: 1.6rem;
     font-weight: 600;
+    font-family: 'Inter', sans-serif;
     border-radius: 4px;
     min-width: 100px;
     padding: 8px 16px;
@@ -24,6 +26,11 @@
 
 .icon + .title, .title + .icon{
     margin-left: 8px;
+}
+.icon{
+    display: inline-block;
+    width: 24px;
+    text-align: center;
 }
 
 //Button types
@@ -49,6 +56,7 @@
     }
 }
 
+
 .outline {
     color: var(--primary);
     border-color: currentColor;
@@ -64,6 +72,16 @@
         text-decoration: underline;
     }
 }
+.black {
+    box-shadow: 0 2px 8px rgb(0 0 0 /6%);
+    border-color: rgba(22, 24, 35, 0.12);
+
+    &:hover {
+        border-color: rgba(22, 24, 35, 0.2);
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+}
+
 
 //Button sizes
 .small {
@@ -74,4 +92,8 @@
 .large {
     min-width: 168px;
     padding: 14px 16px;
+}
+.medium {
+    min-width: 116px;
+    padding: 8px 16px;
 }
