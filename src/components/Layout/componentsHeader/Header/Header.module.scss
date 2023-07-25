@@ -13,12 +13,15 @@
 }
 
 .inner {
+    display: flex;
     height: 100%;
     width: var(--default-layout-width);
-    display: flex;
     padding: 0 var(--default-layout-horizontal-spacer);
     align-items: center;
     justify-content: space-between;
+}
+.logo-link{
+    display: flex;
 }
 
 .actions {
@@ -64,7 +67,7 @@
     cursor: pointer;
 }
 .icon-add{
-    display: inline-flex;
+    display:flex;
     align-items: center;
     justify-content: center;
     span{
@@ -84,6 +87,7 @@
     font-size: 1.4rem;
     font-weight: 500;
     color: var(--white);
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-family);
     background-color: var(--primary);
 }
+

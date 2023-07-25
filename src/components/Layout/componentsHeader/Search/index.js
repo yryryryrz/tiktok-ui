@@ -23,15 +23,6 @@ function Search() {
 
     const debounced = useDebounce(searchValue, 500);
 
-    const handleClear = () => {
-        setSearchvalue('');
-        setSearchResult([]);
-        inputRef.current.focus();
-    };
-    const handleHideResult = () => {
-        setShowResult(false);
-    };
-
     useEffect(() => {
         if (!debounced) {
             setSearchResult([]);
@@ -46,6 +37,16 @@ function Search() {
         };
         fetchApi();
     }, [debounced]);
+
+    const handleClear = () => {
+        setSearchvalue('');
+        setSearchResult([]);
+        inputRef.current.focus();
+    };
+    const handleHideResult = () => {
+        setShowResult(false);
+    };
+
     return (
         <HeadlessTippy
             interactive
@@ -83,7 +84,7 @@ function Search() {
                 )}
                 {loading && <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />}
 
-                <button className={cx('search-btn')}>
+                <button className={cx('search-btn')} onMouseDown={(e) => e.preventDefault()}>
                     <SearchIcon />
                 </button>
             </div>

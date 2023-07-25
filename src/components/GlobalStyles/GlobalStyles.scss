@@ -6,6 +6,8 @@
     --text-color: #161823;
     --white: #fff;
 
+    --font-family: 'Inter', sans-serif;
+
     // default-layout
     --default-layout-header-height: 60px;
     --default-layout-width: 1150px;
@@ -22,7 +24,7 @@ html {
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-family);
     line-height: 1.5;
     text-rendering: optimizeSpeed;
 }
