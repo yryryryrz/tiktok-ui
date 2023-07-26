@@ -3,7 +3,7 @@ import { Wrapper as PopperWrapper } from '~/components/Popper';
 import HeadlessTippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
 
-import * as searchSevices from '~/apiServices/searchServices';
+import * as searchSevices from '~/services/searchService';
 import { faCircleXmark, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { SearchIcon } from '~/components/Icons';
 import AccountItem from '~/components/AccountItem';
@@ -39,7 +39,7 @@ function Search() {
     }, [debounced]);
 
     const handleClear = () => {
-        setFirstName('')
+        setFirstName('');
         setSearchvalue('');
         setSearchResult([]);
         inputRef.current.focus();
@@ -49,7 +49,7 @@ function Search() {
     };
 
     return (
-        // Việc sử dụng thẻ bao bọc <div> hoặc <span> xung quanh phần tử tham 
+        // Việc sử dụng thẻ bao bọc <div> hoặc <span> xung quanh phần tử tham
         // chiếu sẽ giải quyết vấn đề này bằng cách tạo ngữ cảnh ParentNode mới.
         <div>
             <HeadlessTippy
@@ -87,7 +87,7 @@ function Search() {
                         </button>
                     )}
                     {loading && <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />}
-    
+
                     <button className={cx('search-btn')} onMouseDown={(e) => e.preventDefault()}>
                         <SearchIcon />
                     </button>
