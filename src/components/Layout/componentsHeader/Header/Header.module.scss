@@ -4,11 +4,15 @@
     --search-top-spacer: 9px;
     --search-button-width: 52px;
 
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
+    background-color: var(--white);
+    z-index: 10;
     height: var(--default-layout-header-height);
     display: flex;
     justify-content: center;
-
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px;
 }
 
@@ -20,7 +24,7 @@
     align-items: center;
     justify-content: space-between;
 }
-.logo-link{
+.logo-link {
     display: flex;
 }
 
@@ -47,15 +51,15 @@
     padding: 4px 12px;
     cursor: pointer;
 }
-.action-btn__icon{
+.action-btn__icon {
     color: #161823;
     font-size: 2.2rem;
     background-color: transparent;
     padding: 4px 10px;
     cursor: pointer;
-} 
+}
 
-.inbox-margin{
+.inbox-margin {
     padding-top: 8px;
 }
 .user-avatar {
@@ -66,17 +70,17 @@
     margin-left: 16px;
     cursor: pointer;
 }
-.icon-add{
-    display:flex;
+.icon-add {
+    display: flex;
     align-items: center;
     justify-content: center;
-    span{
+    span {
         color: var(--black);
         padding-left: 4px;
     }
 }
 
-.badge{
+.badge {
     position: absolute;
     top: -3px;
     right: 0px;
@@ -90,4 +94,3 @@
     font-family: var(--font-family);
     background-color: var(--primary);
 }
-
