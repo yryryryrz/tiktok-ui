@@ -12,6 +12,7 @@ import {
     ExploreActiveIcon,
 } from '~/components/Icons';
 import Menu, { MenuItem } from './Menu';
+import SuggestedAccounts from '~/components/SuggestedAccounts/SuggestedAccounts';
 
 const cx = classNames.bind(styles);
 
@@ -39,6 +40,8 @@ function Sidebar() {
                     activeIcon={<ExploreActiveIcon />}
                 />
             </Menu>
+            <SuggestedAccounts label={'Suggested accounts'} />
+            {/* <SuggestedAccounts label={'Following accounts'} /> */}
         </aside>
     );
 }
