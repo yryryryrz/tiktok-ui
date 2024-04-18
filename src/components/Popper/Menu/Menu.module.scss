@@ -8,14 +8,15 @@
 .menu-popper {
     padding-bottom: 8px;
 }
-.menu-body{
+.menu-body {
     overflow-y: auto;
 }
 
 // Menu items
 .menu-item {
     width: 100%;
-    justify-content: flex-start;
+    display: flex;
+    justify-content: space-between;
     border-radius: 0;
     font-weight: 600;
     padding: 14px 16px;

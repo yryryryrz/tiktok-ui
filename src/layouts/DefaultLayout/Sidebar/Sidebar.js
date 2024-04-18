@@ -1,47 +1,20 @@
 import styles from './Sidebar.module.scss';
 import classNames from 'classnames/bind';
 import config from '~/config';
-import {
-    HomeIcon,
-    HomeActiveIcon,
-    UseGroupIcon,
-    UseGroupActiveIcon,
-    LiveIcon,
-    LiveActiveIcon,
-    ExploreIcon,
-    ExploreActiveIcon,
-} from '~/components/Icons';
 import Menu, { MenuItem } from './Menu';
-import SuggestedAccounts from '~/components/SuggestedAccounts/SuggestedAccounts';
 
 const cx = classNames.bind(styles);
 
 function Sidebar() {
     return (
-        <aside className={cx('wrapper')}>
+        <aside className={cx('list-menu')}>
             <Menu>
-                <MenuItem title="For You" to={config.routes.home} icon={<HomeIcon />} activeIcon={<HomeActiveIcon />} />
-                <MenuItem
-                    title="Following"
-                    to={config.routes.following}
-                    icon={<UseGroupIcon />}
-                    activeIcon={<UseGroupActiveIcon />}
-                />
-                <MenuItem
-                    title="Explore"
-                    to={config.routes.explore}
-                    icon={<LiveIcon />}
-                    activeIcon={<LiveActiveIcon />}
-                />
-                <MenuItem
-                    title="LIVE"
-                    to={config.routes.live}
-                    icon={<ExploreIcon />}
-                    activeIcon={<ExploreActiveIcon />}
-                />
+                <MenuItem title="HOME" to={config.routes.home} />
+                <MenuItem title="SHOP" to={config.routes.shop} />
+                <MenuItem title="BLOG" to={config.routes.blog} />
+                <MenuItem title="WISH LIST" to={config.routes.wishlist} />
+                <MenuItem title="CONTACT" to={config.routes.contact} />
             </Menu>
-            <SuggestedAccounts label={'Suggested accounts'} />
-            {/* <SuggestedAccounts label={'Following accounts'} /> */}
         </aside>
     );
 }

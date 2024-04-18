@@ -20,8 +20,9 @@ import {
     faSignOut,
 } from '@fortawesome/free-solid-svg-icons';
 import Menu from '~/components/Popper/Menu/Menu';
-import { UploadIcon, MessageIcon, InboxIcon } from '~/components/Icons/Icons';
+import { MessageIcon } from '~/components/Icons/Icons';
 import { Link } from 'react-router-dom';
+import Sidebar from '~/layouts/DefaultLayout/Sidebar';
 
 const cx = classNames.bind(style);
 
@@ -66,7 +67,7 @@ const MENU_ITEMS = [
     },
 ];
 
-function Header() {
+function Header({ children }) {
     const currentUser = true;
 
     const handleMenuChange = (menuItem) => {
@@ -93,6 +94,7 @@ function Header() {
             title: 'Settings',
             to: '/Settings',
         },
+
         ...MENU_ITEMS,
         {
             icon: <FontAwesomeIcon icon={faSignOut} />,
@@ -104,55 +106,44 @@ function Header() {
 
     return (
         <header className={cx('wrapper')}>
-            <div className={cx('inner')}>
-                <Link to={config.routes.home} className={cx('logo-link')}>
-                    <img src={images.logo} alt="tiktok" />
-                </Link>
-                <Search />
-                <div className={cx('actions')}>
-                    {currentUser ? (
-                        <>
-                            <Button black medium>
-                                <div className={cx('icon-add')}>
-                                    <UploadIcon />
-                                    <span>Upload</span>
-                                </div>
-                            </Button>
-                            <Tippy delay={[0, 200]} content={'Messenger'} placement="bottom">
-                                <button className={cx('action-btn')}>
-                                    <MessageIcon />
-                                </button>
-                            </Tippy>
-                            <Tippy delay={[0, 200]} content={'Inbox'} placement="bottom">
-                                <div className={cx('inbox-margin')}>
-                                    <button className={cx('action-btn')}>
-                                        <div>
-                                            <InboxIcon />
-                                            <span className={cx('badge')}>13</span>
-                                        </div>
-                                    </button>
-                                </div>
-                            </Tippy>
-                        </>
-                    ) : (
-                        <>
-                            <Button text>Upload</Button>
-                            <Button primary>log in</Button>
-                        </>
-                    )}
-                    <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
+            <div className="container">
+                <div className={cx('inner')}>
+                    <Link to={config.routes.home} className={cx('logo-link')}>
+                        <img src={images.logo} alt="tiktok" />
+                    </Link>
+                    <Sidebar />
+                    <Search />
+                    <div className={cx('actions')}>
                         {currentUser ? (
-                            <Image
-                                className={cx('user-avatar')}
-                                src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/088f315cdbea654e80802028c95be60a~c5_720x720.jpeg?x-expires=1689868800&x-signature=U15yXf92%2FZW5bL4dlD%2BvaozcGyQ%3D"
-                                alt="use1"
-                            />
+                            <>
+                                <Button blackHeader medium>
+                                    <span className={cx('icon-add')}>LOG IN</span>
+                                </Button>
+                                <Tippy delay={[0, 200]} content={'Messenger'} placement="bottom">
+                                    <button className={cx('action-btn')}>
+                                        <MessageIcon />
+                                    </button>
+                                </Tippy>
+                            </>
                         ) : (
-                            <button className={cx('more-btn')}>
-                                <FontAwesomeIcon icon={faEllipsisVertical} />
-                            </button>
+                            <>
+                                <button className="button-login">LOG IN</button>
+                            </>
                         )}
-                    </Menu>
+                        <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
+                            {currentUser ? (
+                                <Image
+                                    className={cx('user-avatar')}
+                                    src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/088f315cdbea654e80802028c95be60a~c5_720x720.jpeg?x-expires=1692216000&x-signature=ZBpcg6WsylGDn9GGb64Cp22A29c%3D"
+                                    alt="use1"
+                                />
+                            ) : (
+                                <button className={cx('more-btn')}>
+                                    <FontAwesomeIcon icon={faEllipsisVertical} />
+                                </button>
+                            )}
+                        </Menu>
+                    </div>
                 </div>
             </div>
         </header>

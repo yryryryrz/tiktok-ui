@@ -14,13 +14,14 @@
     display: flex;
     justify-content: center;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px;
+    background-color: rgb(248 250 252);
+    font-family: 'Roboto Slab', serif;
 }
 
 .inner {
     display: flex;
     height: 100%;
     width: var(--default-layout-width);
-    padding: 0 var(--default-layout-horizontal-spacer);
     align-items: center;
     justify-content: space-between;
 }
@@ -39,21 +40,22 @@
     margin-left: 26px;
     padding: 4px 8px;
     background: transparent;
+    font-family: 'Roboto Slab', serif;
     cursor: pointer;
 }
 
 .action-btn {
     position: relative;
     display: flex;
-    color: #161823;
+    color: #575757;
     font-size: 2.2rem;
     background-color: transparent;
     padding: 4px 12px;
     cursor: pointer;
 }
 .action-btn__icon {
-    color: #161823;
     font-size: 2.2rem;
+    font-weight: 400;
     background-color: transparent;
     padding: 4px 10px;
     cursor: pointer;
@@ -66,31 +68,8 @@
     width: 32px;
     height: 32px;
     object-fit: cover;
+    border: 2px solid #c5c5c5;
     border-radius: 50%;
     margin-left: 16px;
     cursor: pointer;
-}
-.icon-add {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    span {
-        color: var(--black);
-        padding-left: 4px;
-    }
-}
-
-.badge {
-    position: absolute;
-    top: -3px;
-    right: 0px;
-    padding: 0px 6px;
-    height: 2rem;
-    line-height: 2rem;
-    border-radius: 10px;
-    font-size: 1.4rem;
-    font-weight: 500;
-    color: var(--white);
-    font-family: var(--font-family);
-    background-color: var(--primary);
 }

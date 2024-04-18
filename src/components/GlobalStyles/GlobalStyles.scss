@@ -1,5 +1,4 @@
 @import 'normalize.css';
-
 :root {
     --primary: #fe2c55;
     --black: #000;
@@ -9,9 +8,9 @@
     --font-family: 'Inter', sans-serif;
 
     // default-layout
-    --default-layout-header-height: 60px;
-    --default-layout-width: 1150px;
-    --default-layout-horizontal-spacer: 24px;
+    --default-layout-header-height: 64px;
+    --default-layout-width: 100%;
+    --default-layout-horizontal-spacer: 24rem;
 }
 * {
     padding: 0;
@@ -55,28 +54,6 @@ a {
     color: var(--text-color);
     text-decoration: none;
 }
-//Fonts emmbeded
-@font-face {
-    font-family: Inter;
-    src: url('/assets/fonts/TikTokFont-Regular.woff2');
-    font-weight: 400;
-}
-@font-face {
-    font-family: Inter;
-    src: url('/assets/fonts/TikTokFont-Semibold.woff2');
-    font-weight: 600;
-}
-@font-face {
-    font-family: Inter;
-    src: url('/assets/fonts/TikTokFont-Bold.woff2');
-    font-weight: 700;
-}
-@font-face {
-    font-family: TikTokFont;
-    src: url('/assets/fonts/TikTokDisplayFont-Bold.woff2');
-    font-weight: 700;
-}
-
 //Custom tippy
 body {
     .tippy-box {

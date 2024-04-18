@@ -10,6 +10,7 @@ function Button({
     href,
     primary = false,
     black = false,
+    blackHeader = false,
     outline = false,
     text = false,
     rounded = false,
@@ -51,6 +52,7 @@ function Button({
         [className]: className,
         primary,
         black,
+        blackHeader,
         outline,
         disabled,
         rounded,
@@ -68,11 +70,12 @@ function Button({
     );
 }
 
-Button.prototypes ={
+Button.prototypes = {
     to: PropTypes.string,
     href: PropTypes.string,
     primary: PropTypes.bool,
     black: PropTypes.bool,
+    blackHeader: PropTypes.bool,
     outline: PropTypes.bool,
     text: PropTypes.bool,
     rounded: PropTypes.bool,
@@ -85,6 +88,6 @@ Button.prototypes ={
     rightIcon: PropTypes.node,
     className: PropTypes.string,
     onClick: PropTypes.func,
-}
+};
 
 export default Button;
